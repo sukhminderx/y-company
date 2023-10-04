@@ -1,0 +1,10 @@
+.spacer {
+    flex: 1 1 auto;
+}
+.login {
+    margin-right: 10px;
+}
+::ng-deep .mat-mdc-menu-panel.menu-custom {
+    background:#7b1fa2;
+    color: white;
+}

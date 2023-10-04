@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <span>Y Company</span>
+  <span class="spacer"></span>
+  <!--<button mat-icon-button class="icon" aria-label="icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>-->
+  <button
+    mat-icon-button
+    class="icon"
+    aria-label="icon-button with menu icon"
+    [matMenuTriggerFor]="menu"
+    #menuTrigger="matMenuTrigger"
+    (click)="menuTrigger.openMenu()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" [overlapTrigger]="false" class="menu-custom">
+    <span (click)="menuTrigger.closeMenu()">
+      <button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>people_outline</mat-icon>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>videocam</mat-icon>
+        <span>Let's talk</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </span>
+  </mat-menu>
+</mat-toolbar>
