@@ -8,6 +8,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./home/home.component').then((mod) => mod.HomeComponent),
   },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component').then((mod) => mod.LoginComponent),
+  },
 ];
 /*
 @NgModule({

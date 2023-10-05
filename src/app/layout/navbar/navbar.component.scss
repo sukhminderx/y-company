@@ -5,6 +5,9 @@
     margin-right: 10px;
 }
 ::ng-deep .mat-mdc-menu-panel.menu-custom {
-    background:#7b1fa2;
-    color: white;
+    background:#3f51b5 !important;
+    color: white !important;
+}
+::ng-deep .mat-mdc-menu-item, ::ng-deep  .mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon {
+    color: white !important;    
 }

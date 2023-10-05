@@ -25,6 +25,8 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/platform-server": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@coreui/angular": "^4.5.16",
+    "@coreui/icons-angular": "^4.5.16",
     "@nguniversal/express-engine": "^16.2.0",
     "express": "^4.15.2",
     "rxjs": "~7.8.0",
