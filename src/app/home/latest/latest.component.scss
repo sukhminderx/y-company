@@ -1,0 +1,37 @@
+.contentContainer {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: rgba(186, 123, 213, 0.1882352941);
+    @media(min-width: 768px) {
+        margin: 50px;
+    }
+    h2 {
+        text-align: center;
+    }
+    .featureGridContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        gap: 10px;
+        .item {
+            flex: 1;
+            flex-basis: 100%;text-align: center;
+            display: block;
+            margin-bottom: 30px;
+            @media(min-width: 768px) {
+                flex-basis: 45%;
+            }
+            @media(min-width: 1024px) {
+                flex-basis: 21%;
+            }
+            .title {
+                font-weight: bold;
+                font-size: 18px;
+            }
+            .link {
+                font-weight: bold;
+                color: blue;
+            }
+        }
+    }
+}

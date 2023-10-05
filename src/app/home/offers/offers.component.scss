@@ -1,8 +1,12 @@
 .contentContainer {
     margin-bottom: 64px;
-    padding: 50px;
+    padding: 0;
+    padding-top: 20px;
+    h2 {
+        text-align: center;
+    }
     .featureGridContainer {
-        display: grid;
+        display: block;
         grid-template:
         "left right right" 1fr
         "left bottom1 bottom2" 1fr/2fr 1fr 1fr;
@@ -61,7 +65,7 @@
             }
             .featureBanner1 {
                 padding: 30px;
-                position: absolute;
+                position: static;
                 top: 0;
                 left: 0;
                 right: 0;
@@ -74,5 +78,20 @@
             .ctaBlock, .ctaWrp, .btnwrapper {
                 margin-top: 50px;
             }
+            @media(min-width: 768px) {
+                display: grid;
+                .featureBanner1 {
+                    padding: 30px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: -1;
+                    bottom: 0;
+                }
+            }
+    }
+    @media(min-width: 768px) {
+        padding: 50px;
     }
 }
