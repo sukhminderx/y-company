@@ -1,0 +1,21 @@
+@import '@angular/material/_theming';
+@include mat-core(); 
+.contentContainer {
+    text-align: center;
+    padding:10%;
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        @media(min-width: 768px) {
+            margin: 50px;
+            flex-direction: row;
+        }
+        .full-width {
+            width: 100%;
+            @media(min-width: 768px) {
+                width: 31%;
+            }
+        }
+    }
+}
