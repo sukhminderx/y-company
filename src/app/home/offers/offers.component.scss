@@ -3,17 +3,16 @@
     padding: 50px;
     .featureGridContainer {
         display: grid;
-        grid-template-columns: 25% 25% 25% 25% ;
-        grid-template-rows: 50% 50%;
-        grid-gap: 10px;
-        grid-template-areas: 
-            "left left right right"
-            "left left bottom1 bottom2";
+        grid-template:
+        "left right right" 1fr
+        "left bottom1 bottom2" 1fr/2fr 1fr 1fr;
+        gap: 24px;
             .left {
                 grid-area:left;
                 text-align: center;
                 .featureBanner {
                     background: #ba7bd530;
+                    padding-top: 80px;
                 }
                 .foregroundImageContainer {
                     text-align: center;
@@ -25,6 +24,7 @@
                 .featureBanner {
                     background: rgb(180 102 213 / 39%);
                     display: flex;    justify-content: space-around;
+                    padding-top: 60px;
                     .foregroundImageContainer {
                         text-align: right;
                     }
@@ -53,8 +53,20 @@
                     background: rgb(154 30 207 / 45%);
                 }
             }
+            .left, .right, .bottom1, .bottom2 {
+                position: relative;
+            }
             .featureBanner {
-                padding: 30px;height: 100%;
+                padding: 30px;
+            }
+            .featureBanner1 {
+                padding: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                bottom: 0;
             }
             h3 {
                 font-size: 24px;
