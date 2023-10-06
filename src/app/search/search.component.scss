@@ -1,0 +1,25 @@
+@import '@angular/material/_theming';
+@include mat-core(); 
+.contentContainer {
+    padding:4%;
+    h1 {
+        text-align: center;
+    }
+    .container {
+        display: flex;
+        gap: 10px;
+        .mob {
+            display: block;
+            @media(min-width: 768px) {
+                display: none;
+            }
+        }
+        .desk {
+            margin-top: 20px;
+            display: none;
+            @media(min-width: 768px) {
+                display: block;
+            }
+        }
+    }
+}

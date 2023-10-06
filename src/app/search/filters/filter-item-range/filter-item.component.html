@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="title">{{ title }}</div>
+  <div class="list">
+    <mat-slider [min]="min" [max]="max">
+      <input value="10" matSliderStartThumb #from />
+      <input value="90" matSliderEndThumb #to />
+    </mat-slider>
+    {{ from.value }} to {{ to.value }}
+  </div>
+</div>

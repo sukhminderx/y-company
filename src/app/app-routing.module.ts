@@ -20,6 +20,11 @@ export const routes: Routes = [
         (mod) => mod.RegisterComponent
       ),
   },
+  {
+    path: 'search',
+    loadComponent: () =>
+      import('./search/search.component').then((mod) => mod.SearchComponent),
+  },
 ];
 /*
 @NgModule({

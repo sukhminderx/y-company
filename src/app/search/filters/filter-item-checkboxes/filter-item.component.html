@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="title">{{ title }}</div>
+  <div class="list">
+    <div class="item" *ngFor="let item of list">
+      <mat-checkbox class="checkbox" [checked]="true" color="primary">
+        {{ item?.name }}
+      </mat-checkbox>
+    </div>
+  </div>
+</div>

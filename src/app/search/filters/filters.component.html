@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Filters</h2>
+  <app-filter-item-checkboxes
+    title="Category"
+    [list]="categories"
+  ></app-filter-item-checkboxes>
+  <app-filter-item-checkboxes
+    title="Color"
+    [list]="colors"
+  ></app-filter-item-checkboxes>
+  <app-filter-item-range
+    title="Cost (Rs.)"
+    [max]="maxCost"
+  ></app-filter-item-range>
+  <app-filter-item-range title="Discount (Percent)"></app-filter-item-range>
+</div>
