@@ -4,6 +4,23 @@
 .login {
     margin-right: 10px;
 }
+.mob {
+    width: 100%;
+    display: block;
+    @media(min-width: 768px) {
+        display: none;
+    }
+    .full-width {
+        width: 100%;        
+    }
+}
+.desk {
+    margin-top: 20px;
+    display: none;
+    @media(min-width: 768px) {
+        display: block;
+    }
+}
 ::ng-deep .mat-mdc-menu-panel.menu-custom {
     background:#3f51b5 !important;
     color: white !important;

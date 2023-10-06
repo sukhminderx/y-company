@@ -4,6 +4,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +19,9 @@ import { RouterLink } from '@angular/router';
     MatIconModule,
     MatMenuModule,
     RouterLink,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
   ],
 })
 export class NavbarComponent {}
