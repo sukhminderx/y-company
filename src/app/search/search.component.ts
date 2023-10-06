@@ -4,6 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FiltersComponent } from './filters/filters.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-search',
@@ -16,6 +18,8 @@ import { FiltersComponent } from './filters/filters.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     FiltersComponent,
+    MatExpansionModule,
+    MatIconModule,
   ],
 })
 export class SearchComponent {}

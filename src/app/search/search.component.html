@@ -1,8 +1,17 @@
 <section class="contentContainer">
-  <h1>Searched products</h1>
+  <h1 class="desk">Searched products</h1>
   <div class="container">
     <div class="left desk"><app-filters /></div>
-    <div class="left mob"></div>
+    <div class="left mob">
+      <mat-accordion class="headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title> Filters </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-filters />
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
     <div class="right"></div>
   </div>
 </section>
