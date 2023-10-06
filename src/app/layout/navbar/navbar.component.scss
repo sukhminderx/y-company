@@ -28,3 +28,6 @@
 ::ng-deep .mat-mdc-menu-item, ::ng-deep  .mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon {
     color: white !important;    
 }
+::ng-deep .search .mat-icon {
+    color: black !important;
+}

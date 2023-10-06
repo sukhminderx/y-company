@@ -8,6 +8,10 @@
     .container {
         display: flex;
         gap: 10px;
+        flex-direction: column;
+        @media(min-width: 768px) {
+            flex-direction: row;
+        }
         .mob {
             display: block;
             width: 100%;

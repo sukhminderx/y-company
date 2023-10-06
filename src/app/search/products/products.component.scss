@@ -1,12 +1,7 @@
+
 .contentContainer {
-    margin-bottom: 24px;
-    padding: 20px;
-    @media(min-width: 768px) {
-        margin: 50px;
-    }
-    h2 {
-        text-align: center;
-    }
+    text-align: center;
+    padding:10%;
     .featureGridContainer {
         display: flex;
         justify-content: space-between;
@@ -35,6 +30,11 @@
             .link {
                 font-weight: bold;
                 color: blue;
+            }
+            .price {
+                font-weight: bold;
+                font-size: 14px;
+
             }
         }
     }
