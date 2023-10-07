@@ -51,4 +51,33 @@
             }
         }
     }
+    .bottom {
+        .item {
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            .heading {
+                font-weight: bold;
+                font-size: 32px;
+                line-height: 32px;
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }
+            .grid {
+                .horiz {
+                    display: flex;
+                }
+                .left {
+                    background-color: lightgray;
+                    padding: 10px;
+                    flex: 1;
+                }
+                .right {
+                    background-color: lightcyan;
+                    padding: 10px;
+                    flex: 1;
+                }
+            }
+        }
+    }
 }
