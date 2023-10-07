@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -16,6 +17,7 @@ import { NgOptimizedImage } from '@angular/common';
     MatFormFieldModule,
     ReactiveFormsModule,
     NgOptimizedImage,
+    RouterLink,
   ],
 })
 export class ProductsComponent {}

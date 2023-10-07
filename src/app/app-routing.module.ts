@@ -25,6 +25,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./search/search.component').then((mod) => mod.SearchComponent),
   },
+  {
+    path: 'detail',
+    loadComponent: () =>
+      import('./detail/detail.component').then((mod) => mod.DetailComponent),
+  },
 ];
 /*
 @NgModule({
