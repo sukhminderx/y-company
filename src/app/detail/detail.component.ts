@@ -5,12 +5,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  MatPaginatorIntl,
-  MatPaginatorModule,
-} from '@angular/material/paginator';
-import { Subject } from 'rxjs';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -23,6 +19,7 @@ import { Subject } from 'rxjs';
     ReactiveFormsModule,
     MatExpansionModule,
     MatIconModule,
+    MdbCarouselModule,
     MatPaginatorModule,
   ],
 })
