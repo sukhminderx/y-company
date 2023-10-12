@@ -1,0 +1,29 @@
+.contentContainer {
+    padding: 20px;
+    .top {
+        display: flex;flex-direction: column;
+        @media(min-width: 768px) {
+            flex-direction: row;
+        }
+        .title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .left {
+            width: 100%;
+            margin-bottom: 30px;
+            @media(min-width: 768px) {
+                width: 40%;
+            }
+        }
+        .right {
+            flex: 1;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 0 0;
+            @media(min-width: 768px) {
+                padding: 0 40px;
+            }
+        }
+    }
+}

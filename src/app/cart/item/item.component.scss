@@ -1,0 +1,41 @@
+.item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px;
+    flex-basis: 45%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+    .title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .link {
+        font-weight: bold;
+        color: blue;
+    }
+    .priceContainer {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .price {
+        font-weight: bold;
+        font-size: 14px;
+
+    }     
+    .count {
+        padding: 5px;
+        border: 1px solid lightblue;
+    }
+    .add {
+        margin: 0 auto;
+        width: 50%;
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        justify-content: space-around;   
+    }
+}

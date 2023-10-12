@@ -30,6 +30,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./detail/detail.component').then((mod) => mod.DetailComponent),
   },
+  {
+    path: 'cart',
+    loadComponent: () =>
+      import('./cart/cart.component').then((mod) => mod.CartComponent),
+  },
 ];
 /*
 @NgModule({
