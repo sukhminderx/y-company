@@ -1,19 +1,11 @@
 .item {
     flex: 1;
     text-align: center;
-    display: flex;
     margin-bottom: 30px;
     gap: 10px;
     flex-basis: 45%;
-    padding: 10px;
-    border: 1px solid lightgrey;
-    .image {
-        width: 30%;
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
     .title {
         font-weight: bold;
         font-size: 18px;
@@ -21,11 +13,6 @@
     .link {
         font-weight: bold;
         color: blue;
-    }
-    .details {
-        padding: 3%;
-        flex: 1;
-
     }
     .priceContainer {
         display: flex;
