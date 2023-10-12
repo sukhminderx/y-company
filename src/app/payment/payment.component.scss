@@ -1,0 +1,40 @@
+@import '@angular/material/_theming';
+@include mat-core(); 
+.contentContainer {
+    padding: 20px;
+    .top {
+        display: flex;flex-direction: column;
+        @media(min-width: 768px) {
+            flex-direction: row;
+        }
+        .title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .left {
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+            padding:10%;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            @media(min-width: 768px) {
+                margin: 50px;
+                flex-direction: row;
+            }
+            .full-width {
+                width: 100%;
+                @media(min-width: 768px) {
+                    width: 48%;
+                }
+            }
+        }
+    }
+    .card {
+        border: 1px solid lightgrey;
+        padding: 20px;
+    }
+}

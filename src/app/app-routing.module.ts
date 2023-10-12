@@ -35,6 +35,16 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./cart/cart.component').then((mod) => mod.CartComponent),
   },
+  {
+    path: 'payment',
+    loadComponent: () =>
+      import('./payment/payment.component').then((mod) => mod.PaymentComponent),
+  },
+  {
+    path: 'paid',
+    loadComponent: () =>
+      import('./paid/paid.component').then((mod) => mod.PaidComponent),
+  },
 ];
 /*
 @NgModule({

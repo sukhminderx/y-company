@@ -5,22 +5,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { NgOptimizedImage } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { MatSelectModule } from '@angular/material/select';
 @Component({
-  selector: 'app-cart-summary',
-  templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.scss'],
+  selector: 'app-paid',
+  templateUrl: './paid.component.html',
+  styleUrls: ['./paid.component.scss'],
   standalone: true,
   imports: [
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSelectModule,
     ReactiveFormsModule,
     MatExpansionModule,
     MatIconModule,
-    RouterLink,
-    NgOptimizedImage,
+    MdbCarouselModule,
+    MatPaginatorModule,
   ],
 })
-export class CartSummaryomponent {}
+export class PaidComponent {}

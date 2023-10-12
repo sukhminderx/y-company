@@ -1,0 +1,102 @@
+<section class="contentContainer">
+  <div class="top">
+    <div class="left">
+      <h1>Payment Details</h1>
+      <h2 class="title">Contact information</h2>
+
+      <form class="form">
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="youremail@domain.com"
+            value="sdsd"
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="youremail@domain.com"
+            value="sdsd"
+          />
+        </mat-form-field>
+      </form>
+
+      <h2 class="title">Billing Address Details</h2>
+      <form class="form">
+        <mat-form-field class="full-width">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="youremail@domain.com" value="sdsd" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>City</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </form>
+      <form class="form">
+        <mat-form-field class="full-width">
+          <mat-label>State</mat-label>
+          <input matInput placeholder="youremail@domain.com" value="sdsd" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Pincode</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </form>
+      <form class="form">
+        <mat-form-field class="full-width">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="youremail@domain.com" value="sdsd" />
+        </mat-form-field>
+      </form>
+      <h2 class="title">Payment information</h2>
+      <div class="card">
+        <form class="form">
+          <mat-form-field class="full-width">
+            <mat-label>Card number</mat-label>
+            <input matInput placeholder="youremail@domain.com" value="sdsd" />
+          </mat-form-field>
+        </form>
+        <form class="form">
+          <mat-form-field class="full-width">
+            <mat-label>Expiry month</mat-label>
+            <mat-select disableRipple>
+              <mat-option value="1">Option 1</mat-option>
+              <mat-option value="2">Option 2</mat-option>
+              <mat-option value="3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Expiry year</mat-label
+            ><mat-select disableRipple>
+              <mat-option value="1">Option 1</mat-option>
+              <mat-option value="2">Option 2</mat-option>
+              <mat-option value="3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+        <form class="form">
+          <mat-form-field class="full-width">
+            <mat-label>CVV</mat-label>
+            <input
+              matInput
+              placeholder="youremail@domain.com"
+              value="sdsd"
+            /><mat-icon matSuffix>credit_card</mat-icon>
+          </mat-form-field>
+        </form>
+        <div class="ctaBlock">
+          <button mat-raised-button color="primary" routerLink="/paid">
+            Pay
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
