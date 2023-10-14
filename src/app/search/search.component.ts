@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { FiltersComponent } from './filters/filters.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductsComponent } from './products/products.component';
+import { Meta } from '@angular/platform-browser';
 import {
   MatPaginatorIntl,
   MatPaginatorModule,
@@ -55,4 +56,13 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: MyCustomPaginatorIntl }],
 })
-export class SearchComponent {}
+export class SearchComponent implements OnInit {
+  constructor(private metaService: Meta) {}
+
+  ngOnInit() {
+    this.metaService.updateTag({
+      property: 'description',
+      content: 'Y company - Search Page', // TODO
+    });
+  }
+}

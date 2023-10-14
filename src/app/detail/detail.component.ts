@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -23,4 +24,13 @@ import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
     MatPaginatorModule,
   ],
 })
-export class DetailComponent {}
+export class DetailComponent implements OnInit {
+  constructor(private metaService: Meta) {}
+
+  ngOnInit() {
+    this.metaService.updateTag({
+      property: 'description',
+      content: 'Y company - Product detail Page', // TODO
+    });
+  }
+}

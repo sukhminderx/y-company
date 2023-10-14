@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,6 +9,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MatSelectModule } from '@angular/material/select';
 import { RouterLink } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -27,4 +28,13 @@ import { RouterLink } from '@angular/router';
     RouterLink,
   ],
 })
-export class PaymentComponent {}
+export class PaymentComponent implements OnInit {
+  constructor(private metaService: Meta) {}
+
+  ngOnInit() {
+    this.metaService.updateTag({
+      property: 'description',
+      content: 'Y company - Payment Page', // TODO
+    });
+  }
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,6 +9,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { CartItemComponent } from './item/item.component';
 import { CartSummaryomponent } from './summary/summary.component';
+import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -27,4 +28,13 @@ import { CartSummaryomponent } from './summary/summary.component';
     CartSummaryomponent,
   ],
 })
-export class CartComponent {}
+export class CartComponent implements OnInit {
+  constructor(private metaService: Meta) {}
+
+  ngOnInit() {
+    this.metaService.updateTag({
+      property: 'description',
+      content: 'Y company - Cart Page', // TODO
+    });
+  }
+}
