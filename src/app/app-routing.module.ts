@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { HomeOffersResolver } from './configs/resolves/offers';
 import { FeaturedProductsResolver } from './configs/resolves/featured-products';
 import { ProductResolver } from './configs/resolves/product';
+import { SearchResolver } from './configs/resolves/search';
 export const routes: Routes = [
   {
     path: '',
@@ -34,7 +35,10 @@ export const routes: Routes = [
     path: 'search',
     loadComponent: () =>
       import('./search/search.component').then((mod) => mod.SearchComponent),
-    title: 'Y Company - Searching latest fashion products', // need resolve
+    title: 'Y Company - Searching latest fashion products',
+    resolve: {
+      products: SearchResolver,
+    },
   },
   {
     path: 'detail/:id',

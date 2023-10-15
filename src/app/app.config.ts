@@ -6,6 +6,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { HomeService } from './configs/services/home.service';
 import { ProductService } from './configs/services/product.service';
+import { SearchService } from './configs/services/search.service';
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(BrowserModule),
@@ -13,5 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     HomeService,
     ProductService,
+    SearchService,
   ],
 };
