@@ -59,6 +59,7 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
 })
 export class SearchComponent implements OnInit {
   products: any = [];
+  title = 'Products';
   constructor(
     private metaService: Meta,
     private activatedRoute: ActivatedRoute
@@ -71,6 +72,9 @@ export class SearchComponent implements OnInit {
         property: 'description',
         content: 'Y company - Product Search Page',
       });
+    });
+    this.activatedRoute.queryParams.subscribe(({ title }) => {
+      this.title = title;
     });
   }
 }

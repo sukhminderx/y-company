@@ -31,6 +31,7 @@ export class NavbarComponent {
     this.router.navigate(['/search'], {
       queryParams: {
         search: 'searching this ',
+        title: 'Search results',
       },
     });
   }

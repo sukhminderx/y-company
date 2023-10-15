@@ -18,6 +18,7 @@ export class OffersComponent {
     this.router.navigate(['/search'], {
       queryParams: {
         search: 'offers',
+        title: 'Latest offers',
       },
     });
   }
