@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -18,6 +18,9 @@ import { RouterLink } from '@angular/router';
     ReactiveFormsModule,
     NgOptimizedImage,
     RouterLink,
+    CommonModule,
   ],
 })
-export class ProductsComponent {}
+export class ProductsComponent {
+  @Input() products: any = [];
+}

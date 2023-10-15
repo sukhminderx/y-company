@@ -11,6 +11,9 @@
         "left right right" 1fr
         "left bottom1 bottom2" 1fr/2fr 1fr 1fr;
         gap: 24px;
+        section {
+            cursor: pointer;
+        }
             .left {
                 grid-area:left;
                 text-align: center;

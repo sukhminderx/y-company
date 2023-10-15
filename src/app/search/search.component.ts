@@ -13,6 +13,7 @@ import {
   MatPaginatorModule,
 } from '@angular/material/paginator';
 import { Subject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
@@ -57,12 +58,19 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   providers: [{ provide: MatPaginatorIntl, useClass: MyCustomPaginatorIntl }],
 })
 export class SearchComponent implements OnInit {
-  constructor(private metaService: Meta) {}
+  products: any = [];
+  constructor(
+    private metaService: Meta,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.metaService.updateTag({
-      property: 'description',
-      content: 'Y company - Search Page', // TODO
+    this.activatedRoute.data.subscribe(({ products }) => {
+      this.products = products;
+      this.metaService.updateTag({
+        property: 'description',
+        content: 'Y company - Product Search Page',
+      });
     });
   }
 }

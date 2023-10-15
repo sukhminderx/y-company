@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NgFor, NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offers',
@@ -11,4 +12,13 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class OffersComponent {
   @Input() offers: any = {};
+  constructor(private router: Router) {}
+
+  goto() {
+    this.router.navigate(['/search'], {
+      queryParams: {
+        search: 'offers',
+      },
+    });
+  }
 }

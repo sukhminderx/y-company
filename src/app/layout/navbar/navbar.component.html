@@ -50,6 +50,6 @@
   <mat-form-field class="full-width">
     <mat-label>Search</mat-label>
     <input type="text" matInput placeholder="clothes" />
-    <mat-icon matSuffix routerLink="/search">search</mat-icon>
+    <mat-icon matSuffix (click)="goto()" routerLink="/search">search</mat-icon>
   </mat-form-field>
 </form>

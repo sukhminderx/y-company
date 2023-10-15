@@ -3,30 +3,133 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SearchService {
   getProducts(search: string) {
-    return {
-      id: 1,
-      images: [
-        'https://multimedia.bbycastatic.ca/multimedia/products/500x500/164/16497/16497749.jpeg',
-        'https://multimedia.bbycastatic.ca/multimedia/products/500x500/164/16497/16497749_1.jpeg',
-        'https://multimedia.bbycastatic.ca/multimedia/products/500x500/164/16497/16497749_2.jpeg',
-      ],
-      title:
-        'Unisex Photochromic Polarized Aviator Sunglasses with Case for Driving/Cycling',
-      stars: 3,
-      modelNumber: 'ced_42979812835573',
-      soldBy: 'Gadget Lab',
-      price: 3000,
-      discountPercent: 20,
-      aboutThisProduct: [
-        'MATERIAL: 50 x 50 cm scarves made with 100% premium polyester silk',
-        'We love how creative you are, so let us know how you have made use of these beautiful scarves. These scarves are polyester silk.',
-        'USE: Cool and airy for the spring and summer seasons and useable all seasons as well as for accessorizing fashion handbags and as a neck scarf coming in unique yet durable styles for all seasons',
-      ],
-      fromTheManufacturer: 'lorem',
-      specifications: {
-        productCondition: 'Brand New',
-        color: 'Red',
+    return [
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
       },
-    };
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+      {
+        id: 1,
+        image:
+          'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
+        title: 'lorem ipsum',
+        description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+        price: 100,
+        discountPercent: 10,
+      },
+    ];
   }
 }

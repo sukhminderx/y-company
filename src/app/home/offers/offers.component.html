@@ -1,7 +1,7 @@
 <section class="contentContainer">
   <h2>Latest offers</h2>
   <div class="featureGridContainer">
-    <section class="left">
+    <section class="left" (click)="goto()">
       <div class="featureBanner featureBanner1">
         <div class="foregroundImageContainer">
           <img height="270" width="270" [ngSrc]="offers?.left?.image" />
@@ -10,49 +10,36 @@
           <h3 class="headline_2Ik-v">
             {{ offers?.left?.headline }}
           </h3>
-
-          <div class="ctaBlock">
-            <button mat-raised-button color="primary">Shop Now</button>
-          </div>
         </div>
       </div>
     </section>
-    <section class="right">
+    <section class="right" (click)="goto()">
       <div class="featureBanner featureBanner1">
         <div class="bannerContent">
           <div class="bannerText">{{ offers?.right[0].headline }}</div>
-          <div class="btnwrapper">
-            <button mat-raised-button color="primary">Shop Now</button>
-          </div>
         </div>
         <div class="foregroundImageContainer">
           <img height="150" width="150" [ngSrc]="offers?.right[0]?.image" />
         </div>
       </div>
     </section>
-    <section class="bottom1">
+    <section class="bottom1" (click)="goto()">
       <div class="featureBanner featureBanner1">
         <div class="foregroundImageContainer">
           <img height="95" width="95" [ngSrc]="offers?.right[1]?.image" />
         </div>
         <div class="bannerContent">
           <h3 class="headline">{{ offers?.right[1].headline }}</h3>
-          <div class="ctaWrp">
-            <button mat-raised-button color="primary">Shop Now</button>
-          </div>
         </div>
       </div>
     </section>
-    <section class="bottom2">
+    <section class="bottom2" (click)="goto()">
       <div class="featureBanner">
         <div class="foregroundImageContainerM">
           <img height="100" width="100" [ngSrc]="offers?.right[2]?.image" />
         </div>
         <div class="bannerContent">
           <h3 class="headline">{{ offers?.right[2].headline }}</h3>
-          <div class="ctaWrp">
-            <button mat-raised-button color="primary">Shop Now</button>
-          </div>
         </div>
       </div>
     </section>
