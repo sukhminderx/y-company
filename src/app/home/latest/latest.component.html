@@ -1,70 +1,14 @@
 <section class="contentContainer">
   <h2>Featured products</h2>
   <div class="featureGridContainer">
-    <div class="item">
+    <div class="item" *ngFor="let item of featuredProducts">
       <div class="image">
-        <img
-          height="100"
-          class="image"
-          width="100"
-          ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp"
-        />
+        <img height="100" class="image" width="100" [ngSrc]="item.image" />
       </div>
       <div>
-        <h3 class="title">lorem ipsum</h3>
+        <h3 class="title">{{ item.title }}</h3>
         <div class="desc">
-          lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-        </div>
-        <div class="link">Shop now</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="image">
-        <img
-          height="100"
-          class="image"
-          width="100"
-          ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp"
-        />
-      </div>
-      <div>
-        <h3 class="title">lorem ipsum</h3>
-        <div class="desc">
-          lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-        </div>
-        <div class="link">Shop now</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="image">
-        <img
-          height="100"
-          class="image"
-          width="100"
-          ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp"
-        />
-      </div>
-      <div>
-        <h3 class="title">lorem ipsum</h3>
-        <div class="desc">
-          lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-        </div>
-        <div class="link">Shop now</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="image">
-        <img
-          height="100"
-          class="image"
-          width="100"
-          ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp"
-        />
-      </div>
-      <div>
-        <h3 class="title">lorem ipsum</h3>
-        <div class="desc">
-          lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+          {{ item.description }}
         </div>
         <div class="link">Shop now</div>
       </div>

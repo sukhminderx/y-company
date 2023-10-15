@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 */
 import { Routes } from '@angular/router';
 import { HomeOffersResolver } from './configs/resolves/offers';
+import { FeaturedProductsResolver } from './configs/resolves/featured-products';
 export const routes: Routes = [
   {
     path: '',
@@ -11,6 +12,7 @@ export const routes: Routes = [
     title: 'Y Company - One stop for latest fashion for youth',
     resolve: {
       offers: HomeOffersResolver,
+      featuredProducts: FeaturedProductsResolver,
     },
   },
   {

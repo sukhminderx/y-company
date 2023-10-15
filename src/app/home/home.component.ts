@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   offers = {};
+  featuredProducts = [];
   constructor(
     private metaService: Meta,
     private activatedRoute: ActivatedRoute
@@ -25,8 +26,9 @@ export class HomeComponent implements OnInit {
         'Y company - Get our Low Price Guarantee, online or in store, on a huge selection of furniture, fitness, travel, baby products and more!',
     });
 
-    this.activatedRoute.data.subscribe(({ offers }) => {
+    this.activatedRoute.data.subscribe(({ offers, featuredProducts }) => {
       this.offers = offers;
+      this.featuredProducts = featuredProducts;
     });
   }
 }
