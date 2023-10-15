@@ -9,6 +9,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { NgFor, NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -23,9 +24,14 @@ import { ActivatedRoute } from '@angular/router';
     MatIconModule,
     MdbCarouselModule,
     MatPaginatorModule,
+    NgOptimizedImage,
+    NgFor,
   ],
 })
 export class DetailComponent implements OnInit {
+  product: any = {};
+  stars: Array<number> = [];
+  unStars: Array<number> = [];
   constructor(
     private metaService: Meta,
     private activatedRoute: ActivatedRoute
@@ -33,7 +39,9 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(({ product }) => {
-      console.log(product);
+      this.product = product;
+      this.stars = Array.from(Array(product.stars).keys());
+      this.unStars = Array.from(Array(5 - product.stars).keys());
       this.metaService.updateTag({
         property: 'description',
         content: 'Y company - Product detail Page', // TODO
