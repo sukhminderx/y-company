@@ -1,6 +1,6 @@
 <section class="contentContainer">
   <div class="featureGridContainer">
-    <div class="item" routerLink="/detail" *ngFor="let product of products">
+    <div class="item" *ngFor="let product of products">
       <div class="image">
         <img height="100" class="image" width="100" [ngSrc]="product.image" />
       </div>
@@ -10,7 +10,7 @@
           {{ product.description }}
         </div>
         <div class="price">Rs {{ product.price }}</div>
-        <div class="link">Shop now</div>
+        <div class="link" (click)="goTo(product)">Shop now</div>
       </div>
     </div>
   </div>

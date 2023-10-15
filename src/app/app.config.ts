@@ -7,10 +7,13 @@ import { provideRouter } from '@angular/router';
 import { HomeService } from './configs/services/home.service';
 import { ProductService } from './configs/services/product.service';
 import { SearchService } from './configs/services/search.service';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(BrowserModule),
     provideRouter(routes),
+    provideHttpClient(withInterceptors([])),
     provideAnimations(),
     HomeService,
     ProductService,

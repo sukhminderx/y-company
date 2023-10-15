@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -23,4 +23,10 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductsComponent {
   @Input() products: any = [];
+
+  constructor(private router: Router) {}
+
+  goTo(item: any) {
+    this.router.navigate(['/detail', item.id]);
+  }
 }
