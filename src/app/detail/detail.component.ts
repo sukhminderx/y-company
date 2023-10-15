@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { Meta } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -25,12 +26,18 @@ import { Meta } from '@angular/platform-browser';
   ],
 })
 export class DetailComponent implements OnInit {
-  constructor(private metaService: Meta) {}
+  constructor(
+    private metaService: Meta,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.metaService.updateTag({
-      property: 'description',
-      content: 'Y company - Product detail Page', // TODO
+    this.activatedRoute.data.subscribe(({ product }) => {
+      console.log(product);
+      this.metaService.updateTag({
+        property: 'description',
+        content: 'Y company - Product detail Page', // TODO
+      });
     });
   }
 }

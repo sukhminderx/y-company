@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Routes } from '@angular/router';
 import { HomeOffersResolver } from './configs/resolves/offers';
 import { FeaturedProductsResolver } from './configs/resolves/featured-products';
+import { ProductResolver } from './configs/resolves/product';
 export const routes: Routes = [
   {
     path: '',
@@ -36,10 +37,13 @@ export const routes: Routes = [
     title: 'Y Company - Searching latest fashion products', // need resolve
   },
   {
-    path: 'detail',
+    path: 'detail/:id',
     loadComponent: () =>
       import('./detail/detail.component').then((mod) => mod.DetailComponent),
-    title: 'Y Company - Product detail', // need resolve
+    title: 'Y Company - Product detail',
+    resolve: {
+      product: ProductResolver,
+    },
   },
   {
     path: 'cart',
@@ -58,5 +62,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./paid/paid.component').then((mod) => mod.PaidComponent),
     title: 'Y Company - order summary',
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: '/',
   },
 ];

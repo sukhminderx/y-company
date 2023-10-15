@@ -45,7 +45,7 @@ export class HomeService {
           'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
         title: 'lorem ipsum',
         description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
-        productId: '',
+        productId: 'prod1',
       },
       {
         id: '1',
@@ -53,7 +53,7 @@ export class HomeService {
           'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
         title: 'lorem ipsum',
         description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
-        productId: '',
+        productId: 'prod2',
       },
       {
         id: '1',
@@ -61,14 +61,14 @@ export class HomeService {
           'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
         title: 'lorem ipsum',
         description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
-        productId: '',
+        productId: 'prod3',
       },
       {
         id: '1',
         image:
           'https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp',
         title: 'lorem ipsum',
-        productId: '',
+        productId: 'prod4',
         description: 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
       },
     ];
