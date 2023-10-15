@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { NgFor, NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss'],
   standalone: true,
-  imports: [NgOptimizedImage, MatButtonModule],
+  imports: [NgOptimizedImage, MatButtonModule, NgFor],
 })
-export class OffersComponent {}
+export class OffersComponent {
+  @Input() offers: any = {};
+}

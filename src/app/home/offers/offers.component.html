@@ -4,15 +4,11 @@
     <section class="left">
       <div class="featureBanner featureBanner1">
         <div class="foregroundImageContainer">
-          <img
-            height="270"
-            width="270"
-            ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/bltac0e9cfb246b3568/6513466d4d72e9d49384beb7/wi-20231004-feature-grid-fg-google-pixel-8-gwp-carousel-xs.png?width=50p&amp;quality=80&amp;auto=webp"
-          />
+          <img height="270" width="270" [ngSrc]="offers?.left?.image" />
         </div>
         <div class="bannerContent">
           <h3 class="headline_2Ik-v">
-            Get a select fashion product at big discount
+            {{ offers?.left?.headline }}
           </h3>
 
           <div class="ctaBlock">
@@ -24,31 +20,23 @@
     <section class="right">
       <div class="featureBanner featureBanner1">
         <div class="bannerContent">
-          <div class="bannerText">Score major discounts on major category.</div>
+          <div class="bannerText">{{ offers?.right[0].headline }}</div>
           <div class="btnwrapper">
             <button mat-raised-button color="primary">Shop Now</button>
           </div>
         </div>
         <div class="foregroundImageContainer">
-          <img
-            height="150"
-            width="150"
-            ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt78006536b6ed1d2c/651300c36f86ad040446e039/majorapps-20230929-uae-grid1-fg-xs.png?width=50p&amp;quality=80&amp;auto=webp"
-          />
+          <img height="150" width="150" [ngSrc]="offers?.right[0]?.image" />
         </div>
       </div>
     </section>
     <section class="bottom1">
       <div class="featureBanner featureBanner1">
         <div class="foregroundImageContainer">
-          <img
-            height="95"
-            width="95"
-            ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt45e7284baba737c1/6435b486c2c6bc10e59e067e/global-20230414-feature-fg-top-deals-lockup-stacked-s.png?width=50p&amp;quality=80&amp;auto=webp"
-          />
+          <img height="95" width="95" [ngSrc]="offers?.right[1]?.image" />
         </div>
         <div class="bannerContent">
-          <h3 class="headline">Best offers for you</h3>
+          <h3 class="headline">{{ offers?.right[1].headline }}</h3>
           <div class="ctaWrp">
             <button mat-raised-button color="primary">Shop Now</button>
           </div>
@@ -58,14 +46,10 @@
     <section class="bottom2">
       <div class="featureBanner">
         <div class="foregroundImageContainerM">
-          <img
-            height="100"
-            width="100"
-            ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blte8251eb4a4aa5431/650c879ab556bd299dd3c2da/computing-20230922-feature-grid-3-fg-pc-gaming-sale-xs.png?width=50p&amp;quality=80&amp;auto=webp"
-          />
+          <img height="100" width="100" [ngSrc]="offers?.right[2]?.image" />
         </div>
         <div class="bannerContent">
-          <h3 class="headline">Category Sale is on.</h3>
+          <h3 class="headline">{{ offers?.right[2].headline }}</h3>
           <div class="ctaWrp">
             <button mat-raised-button color="primary">Shop Now</button>
           </div>

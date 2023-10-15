@@ -2,12 +2,16 @@
 import { RouterModule, Routes } from '@angular/router';
 */
 import { Routes } from '@angular/router';
+import { HomeOffersResolver } from './configs/resolves/offers';
 export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
       import('./home/home.component').then((mod) => mod.HomeComponent),
     title: 'Y Company - One stop for latest fashion for youth',
+    resolve: {
+      offers: HomeOffersResolver,
+    },
   },
   {
     path: 'login',
