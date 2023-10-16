@@ -8,14 +8,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { Meta } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
-import { NgFor, NgOptimizedImage } from '@angular/common';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { CommonModule, NgFor, NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
   standalone: true,
   imports: [
+    CommonModule,
+    RouterLink,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
@@ -47,5 +49,13 @@ export class DetailComponent implements OnInit {
         content: 'Y company - Product detail Page', // TODO
       });
     });
+  }
+
+  addToCart() {
+    localStorage.setItem('cart', JSON.stringify([this.product]));
+  }
+
+  isVisible() {
+    return !!localStorage.getItem('cart');
   }
 }

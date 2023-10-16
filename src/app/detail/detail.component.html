@@ -21,7 +21,17 @@
       <div class="model">Discount</div>
       <div class="discount">{{ product.discountPercent }}%</div>
       <div class="ctaBlock">
-        <button mat-raised-button color="primary">Add to cart</button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="addToCart()"
+          *ngIf="!isVisible()"
+        >
+          Add to cart
+        </button>
+        <div *ngIf="isVisible()" routerLink="/cart">
+          Added to cart. <span>Go to cart</span>
+        </div>
       </div>
     </div>
   </div>
