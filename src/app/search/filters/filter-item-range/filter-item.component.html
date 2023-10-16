@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" [formGroup]="form">
   <div class="title">{{ title }}</div>
   <div class="list">
     <mat-slider [min]="min" [max]="max">
-      <input value="10" matSliderStartThumb #from />
-      <input value="90" matSliderEndThumb #to />
+      <input value="10" matSliderStartThumb [formControlName]="from" />
+      <input value="90" matSliderEndThumb [formControlName]="to" />
     </mat-slider>
-    {{ from.value }} to {{ to.value }}
+    {{ form.get(from).value || 0 }} to {{ form.get(to).value || "MAX" }}
   </div>
 </div>

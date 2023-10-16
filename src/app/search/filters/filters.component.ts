@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { FilterItemCheckboxesComponent } from './filter-item-checkboxes/filter-item.component';
 import { FilterItemRangeComponent } from './filter-item-range/filter-item.component';
 
@@ -20,38 +20,73 @@ import { FilterItemRangeComponent } from './filter-item-range/filter-item.compon
     FilterItemRangeComponent,
   ],
 })
-export class FiltersComponent {
+export class FiltersComponent implements OnInit {
   maxCost = 1000;
   categories = [
     {
       name: 'Men',
-      checked: false,
+      checked: true,
+      id: 'men',
     },
     {
       name: 'Women',
-      checked: false,
+      checked: true,
+      id: 'women',
     },
     {
       name: 'Children',
-      checked: false,
+      checked: true,
+      id: 'children',
     },
   ];
   colors = [
     {
       name: 'Red',
-      checked: false,
+      checked: true,
+      id: 'red',
     },
     {
       name: 'Green',
-      checked: false,
+      checked: true,
+      id: 'green',
     },
     {
       name: 'Blue',
-      checked: false,
-    },
-    {
-      name: 'Any',
-      checked: false,
+      checked: true,
+      id: 'blue',
     },
   ];
+  form = this.fb.group({
+    category: [['men', 'women', 'children']],
+    color: [['red', 'green', 'blue']],
+    fromCost: [''],
+    toCost: ['1000'],
+    fromDiscount: [''],
+    toDiscount: ['100'],
+  });
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.form.valueChanges.subscribe((v) => {
+      console.log(v);
+    });
+  }
+
+  categoryClicked(item: any, list: any) {
+    const selectedItem = list.find((l: any) => l.name === item.name);
+    selectedItem.checked = !selectedItem.checked;
+    const selectedItems = list
+      .filter((l: any) => l.checked)
+      .map((i: any) => i.id);
+    this.form.get('category')?.setValue(selectedItems);
+  }
+
+  colorsClicked(item: any, list: any) {
+    const selectedItem = list.find((l: any) => l.name === item.name);
+    selectedItem.checked = !selectedItem.checked;
+    const selectedItems = list
+      .filter((l: any) => l.checked)
+      .map((i: any) => i.id);
+    this.form.get('color')?.setValue(selectedItems);
+  }
 }

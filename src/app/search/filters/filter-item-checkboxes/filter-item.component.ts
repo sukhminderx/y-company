@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -23,4 +23,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 export class FilterItemCheckboxesComponent {
   @Input() title = '';
   @Input() list: any = [];
+  @Input() form: any;
+  @Output() clicked = new EventEmitter();
+
+  itemClicked(item: any) {
+    this.clicked.emit(item);
+  }
 }

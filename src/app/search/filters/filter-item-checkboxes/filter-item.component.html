@@ -1,8 +1,13 @@
-<div class="container">
+<div class="container" [formGroup]="form">
   <div class="title">{{ title }}</div>
   <div class="list">
     <div class="item" *ngFor="let item of list">
-      <mat-checkbox class="checkbox" [checked]="true" color="primary">
+      <mat-checkbox
+        class="checkbox"
+        [checked]="item.checked"
+        color="primary"
+        (click)="itemClicked(item)"
+      >
         {{ item?.name }}
       </mat-checkbox>
     </div>
