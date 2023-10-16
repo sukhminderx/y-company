@@ -6,7 +6,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { Router, RouterLink } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -22,17 +27,23 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class NavbarComponent {
-  constructor(private router: Router) {}
+  form = this.fb.group({
+    search: ['', Validators.required],
+  });
+  constructor(private router: Router, private fb: FormBuilder) {}
 
   goto() {
-    this.router.navigate(['/search'], {
-      queryParams: {
-        search: 'searching this ',
-        title: 'Search results',
-      },
-    });
+    if (this.form.get('search')?.value) {
+      this.router.navigate(['/search'], {
+        queryParams: {
+          search: this.form.get('search')?.value,
+          title: 'Search results',
+        },
+      });
+    }
   }
 }

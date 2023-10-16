@@ -1,10 +1,15 @@
 <mat-toolbar color="primary">
   <span routerLink="/">Y Company</span>
   <span class="spacer"></span>
-  <form class="form desk">
+  <form class="form desk" [formGroup]="form">
     <mat-form-field class="full-width search">
       <mat-label>Search</mat-label>
-      <input type="text" matInput placeholder="clothes" />
+      <input
+        type="text"
+        matInput
+        placeholder="clothes"
+        formControlName="search"
+      />
       <mat-icon matSuffix (click)="goto()">search</mat-icon>
     </mat-form-field>
   </form>
@@ -46,10 +51,15 @@
   </mat-menu>
 </mat-toolbar>
 
-<form class="form mob">
+<form class="form mob" [formGroup]="form">
   <mat-form-field class="full-width">
     <mat-label>Search</mat-label>
-    <input type="text" matInput placeholder="clothes" />
+    <input
+      type="text"
+      matInput
+      placeholder="clothes"
+      formControlName="search"
+    />
     <mat-icon matSuffix (click)="goto()" routerLink="/search">search</mat-icon>
   </mat-form-field>
 </form>
