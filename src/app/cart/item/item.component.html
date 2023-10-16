@@ -12,9 +12,9 @@
       <div class="price">Total discount: Rs {{ item.discount }}</div>
     </div>
     <div class="add">
-      <mat-icon>add</mat-icon>
+      <mat-icon (click)="add()">add</mat-icon>
       <div class="count">{{ item.count }}</div>
-      <mat-icon>remove</mat-icon>
+      <mat-icon (click)="remove()">remove</mat-icon>
     </div>
     <div class="price">Total price: Rs {{ item.total }}</div>
   </div>
