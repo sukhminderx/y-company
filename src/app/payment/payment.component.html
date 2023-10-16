@@ -1,4 +1,4 @@
-<section class="contentContainer">
+<form class="contentContainer" [formGroup]="form">
   <div class="top">
     <div class="left">
       <h1>Payment Details</h1>
@@ -10,18 +10,24 @@
           <input
             type="email"
             matInput
+            formControlName="email"
             placeholder="youremail@domain.com"
-            value="sdsd"
-          />
+          /><mat-error
+            *ngIf="form.dirty && form.controls['email'].errors?.['required']"
+            >Please enter correct email</mat-error
+          >
         </mat-form-field>
         <mat-form-field class="full-width">
           <mat-label>Name</mat-label>
           <input
-            type="email"
+            type="text"
             matInput
-            placeholder="youremail@domain.com"
-            value="sdsd"
-          />
+            placeholder="xyz"
+            formControlName="name"
+          /><mat-error
+            *ngIf="form.dirty && form.controls['name'].errors?.['required']"
+            >Please enter name</mat-error
+          >
         </mat-form-field>
       </form>
 
@@ -29,29 +35,53 @@
       <form class="form">
         <mat-form-field class="full-width">
           <mat-label>Address</mat-label>
-          <input matInput placeholder="youremail@domain.com" value="sdsd" />
+          <textarea matInput formControlName="address"></textarea
+          ><mat-error
+            *ngIf="form.dirty && form.controls['address'].errors?.['required']"
+            >Please enter Address</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field class="full-width">
           <mat-label>City</mat-label>
-          <textarea matInput></textarea>
+          <input
+            matInput
+            placeholder="5 Dixie road"
+            formControlName="city"
+          /><mat-error
+            *ngIf="form.dirty && form.controls['city'].errors?.['required']"
+            >Please enter city</mat-error
+          >
         </mat-form-field>
       </form>
       <form class="form">
         <mat-form-field class="full-width">
           <mat-label>State</mat-label>
-          <input matInput placeholder="youremail@domain.com" value="sdsd" />
+          <input
+            matInput
+            placeholder="State"
+            formControlName="state"
+          /><mat-error
+            *ngIf="form.dirty && form.controls['state'].errors?.['required']"
+            >Please enter state</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field class="full-width">
           <mat-label>Pincode</mat-label>
-          <textarea matInput></textarea>
+          <input matInput formControlName="pincode" /><mat-error
+            *ngIf="form.dirty && form.controls['pincode'].errors?.['required']"
+            >Please enter pincode</mat-error
+          >
         </mat-form-field>
       </form>
       <form class="form">
         <mat-form-field class="full-width">
           <mat-label>Phone</mat-label>
-          <input matInput placeholder="youremail@domain.com" value="sdsd" />
+          <input matInput formControlName="phone" /><mat-error
+            *ngIf="form.dirty && form.controls['phone'].errors?.['required']"
+            >Please enter phone</mat-error
+          >
         </mat-form-field>
       </form>
       <h2 class="title">Payment information</h2>
@@ -59,26 +89,48 @@
         <form class="form">
           <mat-form-field class="full-width">
             <mat-label>Card number</mat-label>
-            <input matInput placeholder="youremail@domain.com" value="sdsd" />
+            <input matInput formControlName="cardNumber" /><mat-error
+              *ngIf="form.dirty && form.controls['cardNumber'].errors?.['required']"
+              >Please enter cardNumber</mat-error
+            >
           </mat-form-field>
         </form>
         <form class="form">
           <mat-form-field class="full-width">
             <mat-label>Expiry month</mat-label>
-            <mat-select disableRipple>
-              <mat-option value="1">Option 1</mat-option>
-              <mat-option value="2">Option 2</mat-option>
-              <mat-option value="3">Option 3</mat-option>
-            </mat-select>
+            <mat-select disableRipple formControlName="month">
+              <mat-option value="jan">January</mat-option>
+              <mat-option value="feb">Febuary</mat-option>
+              <mat-option value="mar">March</mat-option>
+              <mat-option value="apr">April</mat-option>
+              <mat-option value="may">May</mat-option>
+              <mat-option value="june">June</mat-option>
+              <mat-option value="july">July</mat-option>
+              <mat-option value="aug">August</mat-option>
+              <mat-option value="sept">September</mat-option>
+              <mat-option value="oct">October</mat-option>
+              <mat-option value="nov">November</mat-option>
+              <mat-option value="dec">December</mat-option> </mat-select
+            ><mat-error
+              *ngIf="form.dirty && form.controls['month'].errors?.['required']"
+              >Please enter month</mat-error
+            >
           </mat-form-field>
 
           <mat-form-field class="full-width">
             <mat-label>Expiry year</mat-label
-            ><mat-select disableRipple>
-              <mat-option value="1">Option 1</mat-option>
-              <mat-option value="2">Option 2</mat-option>
-              <mat-option value="3">Option 3</mat-option>
-            </mat-select>
+            ><mat-select disableRipple formControlName="year">
+              <mat-option value="2023">2023</mat-option>
+              <mat-option value="2024">2024</mat-option>
+              <mat-option value="2025">2025</mat-option>
+              <mat-option value="2026">2026</mat-option>
+              <mat-option value="2027">2027</mat-option>
+              <mat-option value="2028">2028</mat-option>
+              <mat-option value="2029">2029</mat-option> </mat-select
+            ><mat-error
+              *ngIf="form.dirty && form.controls['year'].errors?.['required']"
+              >Please enter year</mat-error
+            >
           </mat-form-field>
         </form>
         <form class="form">
@@ -87,16 +139,18 @@
             <input
               matInput
               placeholder="youremail@domain.com"
-              value="sdsd"
-            /><mat-icon matSuffix>credit_card</mat-icon>
+              formControlName="cvv"
+            /><mat-icon matSuffix>credit_card</mat-icon
+            ><mat-error
+              *ngIf="form.dirty && form.controls['cvv'].errors?.['required']"
+              >Please enter cvv</mat-error
+            >
           </mat-form-field>
         </form>
         <div class="ctaBlock">
-          <button mat-raised-button color="primary" routerLink="/paid">
-            Pay
-          </button>
+          <button mat-raised-button color="primary" (click)="pay()">Pay</button>
         </div>
       </div>
     </div>
   </div>
-</section>
+</form>
