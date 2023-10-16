@@ -6,6 +6,7 @@ import { HomeOffersResolver } from './configs/resolves/offers';
 import { FeaturedProductsResolver } from './configs/resolves/featured-products';
 import { ProductResolver } from './configs/resolves/product';
 import { SearchResolver } from './configs/resolves/search';
+import { SearchService } from './search/search.service';
 export const routes: Routes = [
   {
     path: '',
@@ -36,9 +37,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./search/search.component').then((mod) => mod.SearchComponent),
     title: 'Y Company - Searching latest fashion products',
-    resolve: {
-      products: SearchResolver,
-    },
+    providers: [SearchService],
   },
   {
     path: 'detail/:id',

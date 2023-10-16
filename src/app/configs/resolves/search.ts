@@ -6,6 +6,7 @@ import {
 } from '@angular/router';
 import { SearchService } from '../services/search.service';
 
+/** DEPRECATED */
 export const SearchResolver: ResolveFn<any> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot

@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { FilterItemCheckboxesComponent } from './filter-item-checkboxes/filter-item.component';
 import { FilterItemRangeComponent } from './filter-item-range/filter-item.component';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-filters',
@@ -64,12 +65,13 @@ export class FiltersComponent implements OnInit {
     fromDiscount: [''],
     toDiscount: ['100'],
   });
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private searchService: SearchService) {}
 
   ngOnInit() {
     this.form.valueChanges.subscribe((v) => {
       console.log(v);
     });
+    this.searchService.getProducts(this.form.value);
   }
 
   categoryClicked(item: any, list: any) {
@@ -88,5 +90,9 @@ export class FiltersComponent implements OnInit {
       .filter((l: any) => l.checked)
       .map((i: any) => i.id);
     this.form.get('color')?.setValue(selectedItems);
+  }
+
+  filter() {
+    this.searchService.getProducts(this.form.value);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, effect } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,6 +14,7 @@ import {
 } from '@angular/material/paginator';
 import { Subject } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { SearchService } from './search.service';
 
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
@@ -62,16 +63,19 @@ export class SearchComponent implements OnInit {
   title = 'Products';
   constructor(
     private metaService: Meta,
-    private activatedRoute: ActivatedRoute
-  ) {}
+    private activatedRoute: ActivatedRoute,
+    private searchService: SearchService
+  ) {
+    effect(() => {
+      this.products = this.searchService.products();
+      console.log(this.searchService.products());
+    });
+  }
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(({ products }) => {
-      this.products = products;
-      this.metaService.updateTag({
-        property: 'description',
-        content: 'Y company - Product Search Page',
-      });
+    this.metaService.updateTag({
+      property: 'description',
+      content: 'Y company - Product Search Page',
     });
     this.activatedRoute.queryParams.subscribe(({ title }) => {
       this.title = title;
