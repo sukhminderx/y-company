@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,4 +21,6 @@ import { NgOptimizedImage } from '@angular/common';
     NgOptimizedImage,
   ],
 })
-export class CartItemComponent {}
+export class CartItemComponent {
+  @Input() item: any;
+}

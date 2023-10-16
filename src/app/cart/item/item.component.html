@@ -1,26 +1,21 @@
 <div class="item">
   <div class="image">
-    <img
-      height="100"
-      class="image"
-      width="100"
-      ngSrc="https://merchandising-assets.bestbuy.ca/bltc8653f66842bff7f/blt6b8181061871ba8b/651321322a06d7c905f4f311/wt-20231004-offer-pixel-watch2-2across-xs.jpg?width=828&quality=80&auto=webp"
-    />
+    <img height="100" class="image" width="100" [ngSrc]="item.image" />
   </div>
   <div class="details">
-    <h3 class="title">lorem ipsum</h3>
+    <h3 class="title">{{ item.title }}</h3>
     <div class="desc">
-      lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+      {{ item.description }}
     </div>
     <div class="priceContainer">
-      <div class="price">Unit price: Rs 100</div>
-      <div class="price">Total discount: Rs 100</div>
+      <div class="price">Unit price: Rs {{ item.price }}</div>
+      <div class="price">Total discount: Rs {{ item.discount }}</div>
     </div>
     <div class="add">
       <mat-icon>add</mat-icon>
-      <div class="count">1</div>
+      <div class="count">{{ item.count }}</div>
       <mat-icon>remove</mat-icon>
     </div>
-    <div class="price">Total price: Rs 100</div>
+    <div class="price">Total price: Rs {{ item.total }}</div>
   </div>
 </div>

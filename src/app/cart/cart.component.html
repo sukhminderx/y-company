@@ -2,13 +2,12 @@
   <div class="top">
     <div class="left">
       <h2 class="title">Cart Items</h2>
-      <h2 class="title">Looks like your cart is empty</h2>
-      <div class="items">
-        <app-cart-item />
-        <app-cart-item />
+      <h2 class="title" *ngIf="!isVisible()">Looks like your cart is empty</h2>
+      <div class="items" *ngIf="isVisible()">
+        <app-cart-item *ngFor="let item of items" [item]="item" />
       </div>
     </div>
-    <div class="right">
+    <div class="right" *ngIf="isVisible()">
       <h2 class="title">Order Summary</h2>
       <div><app-cart-summary /></div>
     </div>
