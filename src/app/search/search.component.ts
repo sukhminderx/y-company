@@ -8,6 +8,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductsComponent } from './products/products.component';
 import { Meta } from '@angular/platform-browser';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import {
   MatPaginatorIntl,
   MatPaginatorModule,
@@ -15,6 +17,7 @@ import {
 import { Subject } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { SearchService } from './search.service';
+import { CommonModule } from '@angular/common';
 
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
@@ -46,12 +49,14 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   styleUrls: ['./search.component.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     FiltersComponent,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     ProductsComponent,
     MatIconModule,
     MatPaginatorModule,
@@ -61,16 +66,12 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
 export class SearchComponent implements OnInit {
   products: any = [];
   title = 'Products';
+  showSpinner = false;
   constructor(
     private metaService: Meta,
     private activatedRoute: ActivatedRoute,
     private searchService: SearchService
-  ) {
-    effect(() => {
-      this.products = this.searchService.products();
-      console.log(this.searchService.products());
-    });
-  }
+  ) {}
 
   ngOnInit() {
     this.metaService.updateTag({
@@ -80,5 +81,16 @@ export class SearchComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(({ title }) => {
       this.title = title;
     });
+    this.searchService.products$.subscribe({
+      next: (p: any) => {
+        this.products = p;
+        this.showSpinner = false;
+      },
+    });
+  }
+
+  callFilter(form: any) {
+    this.showSpinner = true;
+    this.searchService.getProducts(form);
   }
 }

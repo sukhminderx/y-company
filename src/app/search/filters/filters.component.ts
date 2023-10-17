@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -65,6 +65,8 @@ export class FiltersComponent implements OnInit {
     fromDiscount: [''],
     toDiscount: ['100'],
   });
+  @Output() callFilter = new EventEmitter();
+
   constructor(private fb: FormBuilder, private searchService: SearchService) {}
 
   ngOnInit() {
@@ -93,6 +95,6 @@ export class FiltersComponent implements OnInit {
   }
 
   filter() {
-    this.searchService.getProducts(this.form.value);
+    this.callFilter.emit(this.form.value);
   }
 }

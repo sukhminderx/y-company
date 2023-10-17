@@ -28,3 +28,16 @@
         }
     }
 }
+.spinner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: lightblue;
+    opacity: 0.3;
+    left: 0;
+    mat-spinner {
+        margin: 0 auto;
+        top: 20%;
+    }
+}
