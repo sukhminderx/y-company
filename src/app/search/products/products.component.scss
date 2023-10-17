@@ -9,6 +9,7 @@
         gap: 10px;
         .item {
             flex: 1;
+            position: relative;
             flex-basis: 100%;text-align: center;
             display: flex;
             flex-direction: row;
@@ -22,6 +23,15 @@
             }
             @media(min-width: 1024px) {
                 flex-basis: 21%;
+            }
+            .discount {
+                color: white;
+                position: absolute;
+                left: 15%;
+                padding: 2px;
+                background: red;
+                border-radius: 5px;
+                transform: rotate(-45deg);
             }
             .title {
                 font-weight: bold;

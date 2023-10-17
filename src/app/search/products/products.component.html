@@ -4,6 +4,9 @@
       <div class="image">
         <img height="100" class="image" width="100" [ngSrc]="product.image" />
       </div>
+      <div class="discount" *ngIf="product.discountPercent">
+        {{ product.discountPercent }}% OFF
+      </div>
       <div>
         <h3 class="title">{{ product.title }}</h3>
         <div class="desc">

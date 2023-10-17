@@ -8,13 +8,19 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getProducts(filter: any) {
-    this.httpClient.get('/assets/mocks/search.json').subscribe({
-      next: (p: any) => {
-        setTimeout(() => {
-          this.products$.next([...p]);
-        }, 1000);
-      },
-    }); // real api should use filters
+  getProducts(filter: any, title: string) {
+    this.httpClient
+      .get(
+        title === 'Search results'
+          ? '/assets/mocks/search.json'
+          : '/assets/mocks/offeredSearch.json'
+      )
+      .subscribe({
+        next: (p: any) => {
+          setTimeout(() => {
+            this.products$.next([...p]);
+          }, 1000);
+        },
+      }); // real api should use filters
   }
 }

@@ -5,7 +5,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SearchService {
   constructor(private httpClient: HttpClient) {}
-  getProducts(search: string) {
-    return this.httpClient.get('/assets/mocks/search.json');
+  getProducts(search: string, title: string) {
+    return this.httpClient.get(
+      title === 'Search results'
+        ? '/assets/mocks/search.json'
+        : '/assets/mocks/offeredSearch.json'
+    );
   }
 }

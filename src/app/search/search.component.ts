@@ -92,6 +92,6 @@ export class SearchComponent implements OnInit {
 
   callFilter(form: any) {
     this.showSpinner = true;
-    this.searchService.getProducts(form);
+    this.searchService.getProducts(form, this.title);
   }
 }

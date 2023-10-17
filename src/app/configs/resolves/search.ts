@@ -11,5 +11,8 @@ export const SearchResolver: ResolveFn<any> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
-  return inject(SearchService).getProducts(route.queryParams['search']);
+  return inject(SearchService).getProducts(
+    route.queryParams['search'],
+    route.queryParams['title']
+  );
 };
