@@ -24,12 +24,16 @@
 
     <mat-form-field class="full-width">
       <mat-label>Confirm Password</mat-label>
-      <input matInput type="password" formControlName="confirm" /><mat-error
+      <input matInput type="password" formControlName="confirm" />
+      <mat-error
         *ngIf="form.dirty && form.controls['confirm'].errors?.['required']"
         >Please enter password to confirm</mat-error
       >
     </mat-form-field>
   </form>
+  <mat-error *ngIf="form.dirty && form.errors?.['mismatch']"
+    >Passwords mismatch</mat-error
+  >
   <div class="ctaBlock">
     <button
       mat-raised-button

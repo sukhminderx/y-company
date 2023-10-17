@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RegisterService } from './register.service';
 import { CommonModule } from '@angular/common';
+import { verifyPass } from '../configs/validators/verifyPass';
 
 @Component({
   selector: 'app-register',
@@ -21,11 +22,14 @@ import { CommonModule } from '@angular/common';
   ],
 })
 export class RegisterComponent {
-  form = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
-    confirm: ['', [Validators.required]],
-  });
+  form = this.fb.group(
+    {
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+      confirm: ['', [Validators.required]],
+    },
+    { validators: verifyPass }
+  );
 
   constructor(
     private fb: FormBuilder,
