@@ -1,4 +1,4 @@
-<section class="contentContainer">
+<form class="contentContainer" [formGroup]="form">
   <h1>Sign up</h1>
   <form class="form">
     <mat-form-field class="full-width">
@@ -7,21 +7,37 @@
         type="email"
         matInput
         placeholder="youremail@domain.com"
-        value="sdsd"
-      />
+        formControlName="email"
+      /><mat-error
+        *ngIf="form.dirty && form.controls['email'].errors?.['required']"
+        >Please enter correct email</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="full-width">
       <mat-label>Password</mat-label>
-      <textarea matInput type="password"></textarea>
+      <input matInput type="password" formControlName="password" /><mat-error
+        *ngIf="form.dirty && form.controls['password'].errors?.['required']"
+        >Please enter password</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="full-width">
       <mat-label>Confirm Password</mat-label>
-      <textarea matInput type="password"></textarea>
+      <input matInput type="password" formControlName="confirm" /><mat-error
+        *ngIf="form.dirty && form.controls['confirm'].errors?.['required']"
+        >Please enter password to confirm</mat-error
+      >
     </mat-form-field>
   </form>
   <div class="ctaBlock">
-    <button mat-raised-button color="primary">Sign up</button>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="form.invalid"
+      (click)="register()"
+    >
+      Sign up
+    </button>
   </div>
-</section>
+</form>
