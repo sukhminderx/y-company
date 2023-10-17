@@ -81,6 +81,7 @@ export class SearchComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(({ title }) => {
       this.title = title;
     });
+    this.showSpinner = true;
     this.searchService.products$.subscribe({
       next: (p: any) => {
         this.products = p;

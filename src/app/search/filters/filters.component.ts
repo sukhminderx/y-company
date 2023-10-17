@@ -73,7 +73,7 @@ export class FiltersComponent implements OnInit {
     this.form.valueChanges.subscribe((v) => {
       console.log(v);
     });
-    this.searchService.getProducts(this.form.value);
+    this.filter();
   }
 
   categoryClicked(item: any, list: any) {
