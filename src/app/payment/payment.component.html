@@ -78,10 +78,11 @@
       <form class="form">
         <mat-form-field class="full-width">
           <mat-label>Phone</mat-label>
-          <input matInput formControlName="phone" /><mat-error
+          <input matInput formControlName="phone" />
+          <mat-error
             *ngIf="form.dirty && form.controls['phone'].errors?.['required']"
-            >Please enter phone</mat-error
-          >
+            >Please enter phone
+          </mat-error>
         </mat-form-field>
       </form>
       <h2 class="title">Payment information</h2>
@@ -89,10 +90,16 @@
         <form class="form">
           <mat-form-field class="full-width">
             <mat-label>Card number</mat-label>
-            <input matInput formControlName="cardNumber" /><mat-error
+            <input matInput formControlName="cardNumber" />
+            <mat-error
               *ngIf="form.dirty && form.controls['cardNumber'].errors?.['required']"
-              >Please enter cardNumber</mat-error
-            >
+              >Please enter cardNumber
+            </mat-error>
+
+            <mat-error
+              *ngIf="form.dirty && form.controls['cardNumber'].errors?.['wrongCard']"
+              >Card number should be 16 digit and numeric
+            </mat-error>
           </mat-form-field>
         </form>
         <form class="form">
@@ -145,6 +152,10 @@
               *ngIf="form.dirty && form.controls['cvv'].errors?.['required']"
               >Please enter cvv</mat-error
             >
+            <mat-error
+              *ngIf="form.dirty && form.controls['cvv'].errors?.['wrongCVV']"
+              >CVV format is wrong
+            </mat-error>
           </mat-form-field>
         </form>
         <div class="ctaBlock">

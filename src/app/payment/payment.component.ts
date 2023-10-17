@@ -12,6 +12,8 @@ import { Router, RouterLink } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { PaymentService } from './payment.service';
+import { cardLength } from '../configs/validators/cardLength';
+import { cvv } from '../configs/validators/cvv';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -41,10 +43,10 @@ export class PaymentComponent implements OnInit {
     city: ['', [Validators.required]],
     state: ['', [Validators.required]],
     pincode: ['', [Validators.required]],
-    cardNumber: ['', [Validators.required]],
+    cardNumber: ['', [Validators.required, cardLength]],
     month: ['', [Validators.required]],
     year: ['', [Validators.required]],
-    cvv: ['', [Validators.required]],
+    cvv: ['', [Validators.required, cvv]],
   });
 
   constructor(
