@@ -8,6 +8,8 @@ import { ProductResolver } from './configs/resolves/product';
 import { SearchResolver } from './configs/resolves/search';
 import { SearchService } from './search/search.service';
 import { OrdersResolver } from './configs/resolves/orders';
+import { canAccess } from './configs/guards/canAccess';
+import { OrdersComponent } from './orders/orders.component';
 export const routes: Routes = [
   {
     path: '',
@@ -51,6 +53,7 @@ export const routes: Routes = [
   },
   {
     path: 'orders',
+    canActivate: [canAccess],
     loadComponent: () =>
       import('./orders/orders.component').then((mod) => mod.OrdersComponent),
     title: 'Y Company - Orders',
