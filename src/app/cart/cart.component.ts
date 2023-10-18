@@ -12,6 +12,7 @@ import { CartSummaryomponent } from './summary/summary.component';
 import { Meta } from '@angular/platform-browser';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { CartService } from './cart.service';
+import { ICart } from '../configs/interfaces/interfaces';
 
 @Component({
   selector: 'app-cart',
@@ -35,7 +36,7 @@ import { CartService } from './cart.service';
 })
 export class CartComponent implements OnInit {
   platformId;
-  items: any = [];
+  items: ICart[] = [];
   constructor(
     private metaService: Meta,
     @Inject(PLATFORM_ID) platformId: Object,

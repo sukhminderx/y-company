@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../cart.service';
+import { ICart } from 'src/app/configs/interfaces/interfaces';
 @Component({
   selector: 'app-cart-summary',
   templateUrl: './summary.component.html',
@@ -34,7 +35,7 @@ export class CartSummaryomponent {
       this.productSubtotal = 0;
       this.discount = 0;
       const items = this.cartService.cart();
-      items.forEach((p: any) => {
+      items.forEach((p: ICart) => {
         this.productSubtotal += p.price * p.count;
         this.discount += p.discount * p.count;
       });

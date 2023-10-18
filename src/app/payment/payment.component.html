@@ -159,7 +159,14 @@
           </mat-form-field>
         </form>
         <div class="ctaBlock">
-          <button mat-raised-button color="primary" (click)="pay()">Pay</button>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="pay()"
+            [disabled]="form.invalid"
+          >
+            Pay
+          </button>
         </div>
       </div>
     </div>

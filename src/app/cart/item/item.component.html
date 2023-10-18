@@ -1,21 +1,21 @@
 <div class="item">
   <div class="image">
-    <img height="100" class="image" width="100" [ngSrc]="item.image" />
+    <img height="100" class="image" width="100" [ngSrc]="item!.image" />
   </div>
   <div class="details">
-    <h3 class="title">{{ item.title }}</h3>
+    <h3 class="title">{{ item!.title }}</h3>
     <div class="desc">
-      {{ item.description }}
+      {{ item!.description }}
     </div>
     <div class="priceContainer">
-      <div class="price">Unit price: Rs {{ item.price }}</div>
-      <div class="price">Total discount: Rs {{ item.discount }}</div>
+      <div class="price">Unit price: Rs {{ item!.price }}</div>
+      <div class="price">Total discount: Rs {{ item!.discount }}</div>
     </div>
     <div class="add">
       <mat-icon (click)="add()">add</mat-icon>
-      <div class="count">{{ item.count }}</div>
+      <div class="count">{{ item!.count }}</div>
       <mat-icon (click)="remove()">remove</mat-icon>
     </div>
-    <div class="price">Total price: Rs {{ item.total }}</div>
+    <div class="price">Total price: Rs {{ item!.total }}</div>
   </div>
 </div>
