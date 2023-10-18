@@ -6,6 +6,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RegisterService } from './register.service';
 import { CommonModule } from '@angular/common';
 import { verifyPass } from '../configs/validators/verifyPass';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -33,13 +34,14 @@ export class RegisterComponent {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private registerService: RegisterService
   ) {}
 
   register() {
     if (this.form.valid) {
       this.registerService.register(this.form.value);
-      // this.router.navigate(['/paid']);
+      this.router.navigate(['/registered']);
     }
   }
 }

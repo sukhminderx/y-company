@@ -67,6 +67,14 @@ export const routes: Routes = [
     title: 'Y Company - order summary',
   },
   {
+    path: 'registered',
+    loadComponent: () =>
+      import('./registered/registered.component').then(
+        (mod) => mod.RegisteredComponent
+      ),
+    title: 'Y Company - registration complete',
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: '/',
