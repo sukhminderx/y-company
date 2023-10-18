@@ -7,6 +7,7 @@ import { FeaturedProductsResolver } from './configs/resolves/featured-products';
 import { ProductResolver } from './configs/resolves/product';
 import { SearchResolver } from './configs/resolves/search';
 import { SearchService } from './search/search.service';
+import { OrdersResolver } from './configs/resolves/orders';
 export const routes: Routes = [
   {
     path: '',
@@ -46,6 +47,15 @@ export const routes: Routes = [
     title: 'Y Company - Product detail',
     resolve: {
       product: ProductResolver,
+    },
+  },
+  {
+    path: 'orders',
+    loadComponent: () =>
+      import('./orders/orders.component').then((mod) => mod.OrdersComponent),
+    title: 'Y Company - Orders',
+    resolve: {
+      orders: OrdersResolver,
     },
   },
   {

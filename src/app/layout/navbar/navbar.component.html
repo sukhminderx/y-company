@@ -44,6 +44,10 @@
         <mat-icon>shopping_cart</mat-icon>
         <span>Cart</span>
       </button>
+      <button mat-menu-item routerLink="/orders" *ngIf="isLoggedIn">
+        <mat-icon>history</mat-icon>
+        <span>Orders</span>
+      </button>
       <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()">
         <mat-icon>logout</mat-icon>
         <span>Logout</span>

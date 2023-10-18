@@ -1,0 +1,19 @@
+<section class="contentContainer">
+  <div class="bottom">
+    <div class="item">
+      <div class="heading">Previous orders</div>
+      <div class="desc">
+        <div class="grid">
+          <div class="horiz" *ngFor="let order of orders">
+            <div class="left">ID {{ order.id }}</div>
+            <div class="right">
+              <p>Products: {{ order.products }}</p>
+              <p>Paid: {{ order.price }}</p>
+              <p>Date: {{ order.date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

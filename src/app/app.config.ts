@@ -8,6 +8,7 @@ import { HomeService } from './configs/services/home.service';
 import { ProductService } from './configs/services/product.service';
 import { SearchService } from './configs/services/search.service';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { OrdersService } from './configs/services/orders.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +19,6 @@ export const appConfig: ApplicationConfig = {
     HomeService,
     ProductService,
     SearchService,
+    OrdersService,
   ],
 };
