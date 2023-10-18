@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgFor, NgOptimizedImage } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss'],
   standalone: true,
-  imports: [NgOptimizedImage, MatButtonModule, NgFor],
+  imports: [MatButtonModule, NgFor],
 })
 export class OffersComponent {
   @Input() offers: any = {};

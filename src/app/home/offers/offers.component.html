@@ -4,7 +4,7 @@
     <section class="left" (click)="goto()">
       <div class="featureBanner featureBanner1">
         <div class="foregroundImageContainer">
-          <img height="270" width="270" [ngSrc]="offers?.left?.image" />
+          <img height="270" width="270" [src]="offers?.left?.image" />
         </div>
         <div class="bannerContent">
           <h3 class="headline_2Ik-v">
@@ -19,14 +19,14 @@
           <div class="bannerText">{{ offers?.right[0].headline }}</div>
         </div>
         <div class="foregroundImageContainer">
-          <img height="150" width="150" [ngSrc]="offers?.right[0]?.image" />
+          <img height="150" width="150" [src]="offers?.right[0]?.image" />
         </div>
       </div>
     </section>
     <section class="bottom1" (click)="goto()">
       <div class="featureBanner featureBanner1">
         <div class="foregroundImageContainer">
-          <img height="95" width="95" [ngSrc]="offers?.right[1]?.image" />
+          <img height="95" width="95" [src]="offers?.right[1]?.image" />
         </div>
         <div class="bannerContent">
           <h3 class="headline">{{ offers?.right[1].headline }}</h3>
@@ -36,7 +36,7 @@
     <section class="bottom2" (click)="goto()">
       <div class="featureBanner">
         <div class="foregroundImageContainerM">
-          <img height="100" width="100" [ngSrc]="offers?.right[2]?.image" />
+          <img height="100" width="100" [src]="offers?.right[2]?.image" />
         </div>
         <div class="bannerContent">
           <h3 class="headline">{{ offers?.right[2].headline }}</h3>
