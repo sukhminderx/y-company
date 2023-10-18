@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +32,6 @@ export class LoginComponent {
   login() {
     if (this.form.valid) {
       this.loginService.login(this.form.value);
-      // this.router.navigate(['/paid']);
     }
   }
 }

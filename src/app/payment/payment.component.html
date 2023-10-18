@@ -1,6 +1,6 @@
 <form class="contentContainer" [formGroup]="form">
   <div class="top">
-    <div class="left">
+    <div class="left" *ngIf="isLoggedIn">
       <h1>Payment Details</h1>
       <h2 class="title">Contact information</h2>
 
@@ -169,6 +169,9 @@
           </button>
         </div>
       </div>
+    </div>
+    <div class="left" *ngIf="!isLoggedIn" routerLink="/login">
+      Please login to retrieve saved address information.
     </div>
   </div>
 </form>

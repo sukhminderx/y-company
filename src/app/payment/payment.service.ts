@@ -8,4 +8,7 @@ export class PaymentService {
   doPayment(details: any) {
     // mock placeholder for payment api call
   }
+  getAddress() {
+    return this.httpClient.get('/assets/mocks/address.json');
+  }
 }

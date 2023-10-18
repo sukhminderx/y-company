@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,7 +10,7 @@ import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MatSelectModule } from '@angular/material/select';
 import { Router, RouterLink } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PaymentService } from './payment.service';
 import { cardLength } from '../configs/validators/cardLength';
 import { cvv } from '../configs/validators/cvv';
@@ -48,19 +48,34 @@ export class PaymentComponent implements OnInit {
     year: ['', [Validators.required]],
     cvv: ['', [Validators.required, cvv]],
   });
+  isLoggedIn = false;
+  platformId: Object = {};
 
   constructor(
     private metaService: Meta,
     private fb: FormBuilder,
     private router: Router,
-    private paymentService: PaymentService
-  ) {}
+    private paymentService: PaymentService,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    this.platformId = platformId;
+  }
 
   ngOnInit() {
     this.metaService.updateTag({
       property: 'description',
       content: 'Y company - Payment Page', // TODO
     });
+    this.isLoggedIn = Boolean(
+      isPlatformBrowser(this.platformId) && localStorage.getItem('user')
+    );
+    if (this.isLoggedIn) {
+      this.paymentService.getAddress().subscribe({
+        next: (address: any) => {
+          this.form.patchValue({ ...address });
+        },
+      });
+    }
   }
 
   pay() {
