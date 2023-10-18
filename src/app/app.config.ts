@@ -9,12 +9,13 @@ import { ProductService } from './configs/services/product.service';
 import { SearchService } from './configs/services/search.service';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { OrdersService } from './configs/services/orders.service';
+import { AuthInterceptor } from './configs/interceptors/auth';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(BrowserModule),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([])),
+    provideHttpClient(withInterceptors([AuthInterceptor])),
     provideAnimations(),
     HomeService,
     ProductService,
