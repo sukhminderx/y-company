@@ -6,7 +6,7 @@
     "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --no-watch --code-coverage",
+    "test": "ng test",
     "dev:ssr": "ng run y-company:serve-ssr  --open",
     "serve:ssr": "node dist/y-company/server/main.js",
     "build:ssr": "ng build && ng run y-company:server",
