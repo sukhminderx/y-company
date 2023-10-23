@@ -1,4 +1,4 @@
-# Y Conpany
+# Y Company
 
 YCompany is a leading luxury fashion brand that design, manufactures and markets variety of clothes, shoes and accessories for men,
 women and children. They are famous for sweaters, moleskin clothing, corduroy clothing, and tattersall shirts. In recent years, the company
